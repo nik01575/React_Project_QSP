@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+#home {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #0e141b, #101d1a, #12322e);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  font-family: "Inter", sans-serif;
+  color: #fff;
+}
+
+/* Floating background glow */
+.bgGlow {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0, 255, 200, 0.3), transparent 70%);
+  filter: blur(120px);
+  bottom: -120px;
+  right: -120px;
+  z-index: 0;
+  animation: floatGlow 6s ease-in-out infinite alternate;
+}
+
+@keyframes floatGlow {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-30px);
+  }
+}
+
+/* Central container */
+.container {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 800px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  box-shadow: 0 0 60px rgba(0, 255, 200, 0.1);
+  animation: fadeIn 1.4s ease-in-out;
+}
+
+/* Heading */
+.title {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.title span {
+  background: linear-gradient(90deg, #00ffc6, #7efdd7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subtitle */
+.subtitle {
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: #c9d4cf;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+.btn {
+  background: linear-gradient(90deg, #00ffc6 0%, #4dffd3 100%);
+  border: none;
+  padding: 18px 100px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #0a1312;
+  letter-spacing: 0.4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0, 255, 198, 0.25);
+
+  /* ✅ Fixes */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap; /* Prevent text from wrapping */
+  text-align: center;
+  background-size: 200% auto; /* For hover animation later */
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 255, 198, 0.45);
+  background-position: right center;
+  filter: brightness(1.1);
+}
+
+
+/* Fade animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.2rem;
+  }
+  .subtitle {
+    font-size: 1rem;
+  }
+  .btn {
+    font-size: 0.95rem;
+    padding: 12px 28px;
+  }
+}

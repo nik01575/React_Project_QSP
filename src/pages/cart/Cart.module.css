@@ -1,0 +1,96 @@
+#cart {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #0a2e2c, #0c3e3a, #31b6a2);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 60px 40px;
+  justify-items: center;
+  align-items: start;
+  color: #eafff7;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* 🛒 Each product card */
+#cart section {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 25px 20px;
+  width: 100%;
+  max-width: 320px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#cart section:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 25px rgba(0, 255, 198, 0.3);
+}
+
+/* 🖼️ Product image */
+#pdImage {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 10px;
+}
+
+/* 🏷️ Product details */
+#cart h4 {
+  margin: 8px 0;
+  color: #eafff7;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* 💸 Price highlight */
+#cart h4:nth-of-type(3) {
+  color: #00ffc6;
+  font-weight: 600;
+}
+
+/* 🧭 Empty cart text */
+#cart h3 {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #ffffff;
+  font-size: 1.4rem;
+  margin-top: 100px;
+  letter-spacing: 0.5px;
+}
+
+/* 🧩 Remove button */
+#cart button {
+  background: linear-gradient(90deg, #00ffc6, #31b6a2);
+  color: #0a2e2c;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+#cart button:hover {
+  background: linear-gradient(90deg, #31b6a2, #00ffc6);
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 255, 198, 0.4);
+}
+
+/* ✅ Responsive layout */
+@media (max-width: 768px) {
+  #cart {
+    grid-template-columns: 1fr;
+    padding: 30px 20px;
+  }
+
+  #cart section {
+    max-width: 100%;
+  }
+}

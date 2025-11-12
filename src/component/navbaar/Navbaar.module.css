@@ -1,0 +1,154 @@
+#navbar {
+  height: 70px;
+  width: 100%;
+  background: linear-gradient(90deg, #0a2e2c, #0c3e3a, #31b6a2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  color: #eafff7;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  transition: all 0.3s ease-in-out;
+}
+
+#navbar figure {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+#navbar figure h3 {
+  font-size: 1.4rem;
+  color: #ffffff;
+}
+
+#navbar figure font {
+  font-size: 25px;
+  color: #00ffc6;
+  filter: drop-shadow(0px 0px 4px #00ffc6);
+}
+
+#navbar ul {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  list-style: none;
+}
+
+#navbar ul li {
+  position: relative;
+  padding: 6px 15px;
+  transition: all 0.3s ease;
+}
+
+#navbar ul li a {
+  color: #eafff7;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+#navbar ul li a:hover {
+  color: #00ffc6;
+}
+
+#navbar ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background-color: #00ffc6;
+  transition: width 0.3s ease;
+}
+
+#navbar ul li a:hover::after {
+  width: 100%;
+}
+
+/* ✅ Dots Icon */
+#dots {
+  margin-top: 5px;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 22px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+#dots:hover {
+  transform: rotate(90deg);
+  color: #00ffc6;
+}
+
+/* ✅ Dropdown Container */
+/* ✅ Dropdown Container */
+.dropdownContainer {
+  position: relative;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 38px;
+  right: 0;
+  background: linear-gradient(180deg, #0a2e2c, #0f2422);
+  box-shadow: 0 4px 15px rgba(0, 255, 198, 0.25);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  width: 160px;
+  animation: fadeIn 0.25s ease forwards;
+  border: 1px solid rgba(0, 255, 198, 0.3);
+  z-index: 1000;
+}
+
+.dropdownMenu li,
+.dropdownMenu button {
+  background: transparent;
+  border: none;
+  color: #eafff7;
+  font-weight: 500;
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  font-family: inherit;
+}
+
+/* ✅ Hover effect for all (links + button) */
+.dropdownMenu li:hover,
+.dropdownMenu button:hover {
+  color: #00ffc6;
+  transform: scale(1.02);
+}
+
+/* ✅ Ensure links inside dropdown also inherit same color/hover */
+.navDropdown {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
